@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Nacionalidade</title>
+    <style>
+         div {
+            background: aquamarine;
+            width: 400px;
+            font: 20px Arial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <h1>Digite sua nacilonalidade</h1>
+    <input type="text" name="nacionalidade" id="nacionalidade">
+    <input type="button" value="Verificar" onclick="verificarNacionalidade()">
+    </div>
+    <div id="res">
+
+    </div>
+
+    <script>
+    function verificarNacionalidade(){
+        var txtNac = window.document.querySelector('input#nacionalidade')
+        var res = window.document.querySelector('div#res')
+        var nac = txtNac.value
+        res.innerHTML = `<p>Sua nacionalidade é ${nac}.</p>`
+        if(nac == 'brasileiro' || nac == 'Brasileiro'){
+            res.innerHTML += `<p>Legal, você é natural do Brasil.</p>`
+        } else {
+            res.innerHTML += `<b>Gringo safado!</b>`
+        }
+
+    }
+    </script>
+</body>
+</html>
